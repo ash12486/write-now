@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Note Taker</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="notes.html">Notes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <aside>
+          <h2>Notes</h2>
+          <ul id="notes-list">
+            <!-- Existing notes will be dynamically inserted here -->
+          </ul>
+        </aside>
+        <section>
+          <h2>Add a Note</h2>
+          <form id="note-form">
+            <div>
+              <label for="note-title">Title:</label>
+              <input type="text" id="note-title" name="note-title" required />
+            </div>
+            <div>
+              <label for="note-text">Note:</label>
+              <textarea id="note-text" name="note-text" required></textarea>
+            </div>
+            <button type="submit" id="save-note-btn">Save</button>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <p>© Note Taker</p>
+      </footer>
+      <script src="script.js"></script>
+    </body>
+  </html>

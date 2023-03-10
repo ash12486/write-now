@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Note Taker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav>
+      <h1>Note Taker</h1>
+      <button id="new-note-btn">Write</button>
+    </nav>
+    
+    <!-- Container for existing notes and new note form -->
+    <div id="notes-container">
+      <!-- List of existing notes -->
+      <ul id="notes-list">
+        <!-- Existing notes will be dynamically generated here -->
+      </ul>
+
+      <!-- New note form -->
+      <form id="new-note-form">
+        <input type="text" id="note-title" placeholder="Note Title" required />
+        <textarea id="note-text" placeholder="Note Text" required></textarea>
+        <button type="submit" id="save-note-btn">Save</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
