@@ -1,1 +1,1 @@
-# write-now
+# Note Taker Starter Code
