@@ -21,8 +21,11 @@ View Deployed Site: https://writenow.herokuapp.com/
 1. Click on the "Get Started" button on the home page to go to the notes page.
    
 ![Homepage](./Develop/public/assets/images/homepage.png)
+
 2. To create a new note, click on the pencil icon in the top-right corner.
+
 ![Notes Page](./Develop/public/assets/images/notespage.png)
+
 3. Enter a title and text for your note, then click the save icon in the top-right corner.
 4. Your note will now appear in the list of notes on the left side of the page.
 5. To view a note, click on its title in the list.
@@ -35,6 +38,6 @@ This application is licensed under the MIT license. See LICENSE for more informa
 ## Contact-Me
 I hope you find the Write Now app useful and enjoyable. If you encounter any issues or have any feedback, please don't hesitate to reach out to me.
 
-Name - Ashlee Huff
-Email - huff.n.ashlee@gmail.com
-Github - https://github.com/ash12486/
+- Name - Ashlee Huff
+- Email - huff.n.ashlee@gmail.com
+- Github - https://github.com/ash12486/
