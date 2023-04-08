@@ -14,13 +14,13 @@ const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 //Middleware
-app.use(express.static("./develop/public"));
+app.use(express.static("./Develop/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // API Route | "Get" request
 app.get("/api/notes", function(req, res) {
-    readFileAsync("./develop/db/db.json", "utf8").then(function(data) {
+    readFileAsync("./Develop/db/db.json", "utf8").then(function(data) {
         notes = [].concat(JSON.parse(data))
         res.json(notes);
     }).catch(function(err) {
@@ -32,13 +32,13 @@ app.get("/api/notes", function(req, res) {
 // API Route | "POST" request
 app.post("/api/notes", function(req, res) {
     const note = req.body;
-    readFileAsync("./develop/db/db.json", "utf8").then(function(data) {
+    readFileAsync("./Develop/db/db.json", "utf8").then(function(data) {
         const notes = JSON.parse(data);
         note.id = notes.length + 1;
         notes.push(note);
         return notes;
     }).then(function(notes) {
-        writeFileAsync("./develop/db/db.json", JSON.stringify(notes)).then(function() {
+        writeFileAsync("./Develop/db/db.json", JSON.stringify(notes)).then(function() {
             res.json(note);
         }).catch(function(err) {
             console.log(err);
@@ -53,7 +53,7 @@ app.post("/api/notes", function(req, res) {
 // API Route | "DELETE" request
 app.delete("/api/notes/:id", function(req, res) {
     const idToDelete = parseInt(req.params.id);
-    readFileAsync("./develop/db/db.json", "utf8").then(function(data) {
+    readFileAsync("./Develop/db/db.json", "utf8").then(function(data) {
         const notes = JSON.parse(data);
         const newNotesData = [];
         for (let i = 0; i < notes.length; i++) {
@@ -63,7 +63,7 @@ app.delete("/api/notes/:id", function(req, res) {
         }
         return newNotesData;
     }).then(function(notes) {
-        writeFileAsync("./develop/db/db.json", JSON.stringify(notes)).then(function() {
+        writeFileAsync("./Develop/db/db.json", JSON.stringify(notes)).then(function() {
             res.send('deleted successfully!');
         }).catch(function(err) {
             console.log(err);
@@ -77,15 +77,15 @@ app.delete("/api/notes/:id", function(req, res) {
 
 //HTML Routes
 app.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "./develop/public/notes.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 
