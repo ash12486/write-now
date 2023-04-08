@@ -1,1 +1,1 @@
-web: node index.js
+web: node ./develop/public/assets/js/index.js
